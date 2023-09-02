@@ -5,54 +5,55 @@ import 'settings/settings_tab.dart';
 import 'tasks_list/tasks_list_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const String routeName='HomeScreen';
+  static const String routeName = 'HomeScreen';
+
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex=0;
-  List<Widget> tabs=[TasksListTab(),SettingsTab()];
+  int currentIndex = 0;
+  List<Widget> tabs = [TasksListTab(), const SettingsTab()];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/bg_light.png'),
-          fit: BoxFit.fill
-        )
-      ),
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/bg_light.png'),
+              fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-
-          title: Text('ToDo App',style: Theme.of(context).textTheme.headline4,),centerTitle: true
-        ),
+            title: Text(
+              'ToDo App',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            centerTitle: true),
         body: tabs[currentIndex],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: (){
+          onPressed: () {
             showAddTaskBottomSheet();
           },
-          child: Icon(Icons.add),),
+          child: const Icon(Icons.add),
+        ),
         bottomNavigationBar: BottomAppBar(
           // color: Colors.red,
           notchMargin: 5,
-          shape: CircularNotchedRectangle(
-          ),
+          shape: const CircularNotchedRectangle(),
           child: BottomNavigationBar(
-
-            onTap: (index){
-
+            onTap: (index) {
               setState(() {
                 currentIndex=index;
               });
               // currentTab();
             },
             currentIndex: currentIndex,
-            items: [
-              BottomNavigationBarItem(icon: Icon(Icons.list),label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.settings),label: ''),
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.list), label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
             ],
           ),
         ),
@@ -62,8 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void showAddTaskBottomSheet(){
     showModalBottomSheet(context: context, builder: (buildContext){
-      return AddTask();
-    });
+      return const AddTask();
+        });
   }
 
 }

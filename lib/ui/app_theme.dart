@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyTheme{
-  static const Color lightPrimaryColor=Color(0XFF5D9CEC);
-  // static const Color lightScaffoldBackgroundColor=Color(0XFFDFECDB);
-  static const Color grayColor=Color(0XFFC8C9CB);
-  // static const Color greenColor=Color(0XFF61E757);
-  static final ThemeData lightTheme=ThemeData(
-    primaryColor: lightPrimaryColor,
-    scaffoldBackgroundColor: Colors.transparent,
-    textTheme: TextTheme(
-      headline4: TextStyle(
-        fontSize: 28,fontWeight: FontWeight.w600,color: Colors.white
-      ),
+  static const Color lightPrimaryColor = Color(0XFF5D9CEC);
 
-      headline6: TextStyle(
-          fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black
-      ),
+  // static const Color lightScaffoldBackgroundColor=Color(0XFFDFECDB);
+  static const Color grayColor = Color(0XFFC8C9CB);
+  static const Color greenColor = Color(0XFF61E757);
+
+  static final ThemeData lightTheme = ThemeData(
+      primaryColor: lightPrimaryColor,
+      scaffoldBackgroundColor: Colors.transparent,
+      textTheme: TextTheme(
+        headline4: TextStyle(
+            fontSize: 28, fontWeight: FontWeight.w600, color: Colors.white),
+        headline6: TextStyle(
+            fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black),
 
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
